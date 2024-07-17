@@ -9,6 +9,7 @@ current_dir = os.path.dirname(__file__)
 
 # Assuming the CSV file is named 'data.csv' in the same folder as your Streamlit script
 csv_path = os.path.join(current_dir, 'bus_details.csv')
+img_path = os.path.join(current_dir, 'rb.png')
 df = pd.read_csv(csv_path, names=column_names)
 
 # Main menu in the sidebar
@@ -54,7 +55,7 @@ if page == "Home":
         Home page
         </div>
     """, unsafe_allow_html=True)
-    st.image('rb.png', width=600)
+    st.image(img_path, width=600)
 
 elif page == "Select the Bus":
     st.title("Select the Bus")
