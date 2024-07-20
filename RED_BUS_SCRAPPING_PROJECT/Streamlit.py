@@ -7,7 +7,7 @@ column_names = ['bus_routes_link', 'bus_routes_name', 'bus_name', 'bus_type', 'd
 # Get the current directory
 current_dir = os.path.dirname(__file__)
 
-# Assuming the CSV file is named 'data.csv' in the same folder as your Streamlit script
+# Reading the csv file
 csv_path = os.path.join(current_dir, 'bus_details.csv')
 img_path = os.path.join(current_dir, 'rb.png')
 df = pd.read_csv(csv_path, names=column_names)
@@ -89,8 +89,7 @@ elif page == "Select the Bus":
         ac_types = ['All', 'A/C', 'NON A/C']
         selected_ac_type = st.selectbox('Select the A/C type:', ac_types)
 
-# Additional Streamlit components can follow
-    # Filter data based on selected criteria
+# Filter data based on selected criteria
     if selected_bus_name != 'All':
         df = df[df['bus_routes_name'] == selected_bus_name]
 
